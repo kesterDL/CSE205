@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class ArrayListsTest {
 
-    ArrayListsAssignment subject = new ArrayListsAssignment();
+    ArrayListsAssignment1 subject = new ArrayListsAssignment1();
     ArrayList<Integer> controlInt = new ArrayList<>(Arrays.asList(0, -1, 2, 3, -4, 0, 1, 2, 3, 4));
     ArrayList<String> controlString = new ArrayList<>(Arrays.asList("amy", "brian","byorn","carol","cypress", "donny", "linda", "nathan"));
 
