@@ -1,8 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
 
-import static java.lang.System.out;
-
 public class Hw1_1 {
 // 4.1Explain what happens if you try to open a file for reading that does not exist.
 // A FileNotFoundException is thrown "Exception in thread "main" java.io.FileNotFoundException: Hw1_1 (No such file or directory)"
@@ -41,6 +39,7 @@ public class Hw1_1 {
     }
 
     public static void Hw1_1() throws IOException {
+
         FileOutputStream outFile = null;
         Scanner user_input = new Scanner(System.in);
 
@@ -55,7 +54,50 @@ public class Hw1_1 {
             outFile.write(i);
         }
 
-
     }
+
+//    5.3 Explain what an unchecked exception is. Give one example.
+//
+//      Checked exceptions are exceptions that are checked when the project compiles. Such as the FileNotFoundException
+//        in the question 4.1. Unchecked exceptions will compile just fine, but may throw an error during runtime.
+//        an example of an unchecked exception is dividing an int by 0, which will throw ArithmeticException.
+
+//    5.5 Why don’t you need to declare that your method might throw an IndexOutOfBoundsException?
+//
+//      IndexOutOfBoundsException is a RuntimeException. It is always checked and therefore no need to surround with
+//        try catch. This type of error needs to be corrected, so it's best to allow it to be thrown so we can correct it.
+
+//    5.6 Is the type of the exception object always the same as the type declared in the catch clause
+//          that catches it? If not, why not?
+//
+//      Yes. If the exception is caught, then it must be the same type of exception object. If it isn't the same
+//        type then the exception will be thrown. In the case that the catch block uses the general "Exception" object
+//        then the exception will be caught regardless of its tpe.
+
+//    6.3 (a) In a static method, it is easy to differentiate between calls to instance methods and calls to static methods.
+//          How do you tell them apart? (b) Why is it not as easy for methods that are called from an instance method?
+//
+//      A static method is called using the class, not an instance of the class. For example Math.pow(a,b);
+//        Math is a class. We can just call the method directly by writing the className.method();
+//        An instance method would be called Math m = new Math(); then m.pow(a,b);
+//
+
+//    6.7 Continuing, write the code to instantiate another C object named cObj2 calling the second constructor to
+//          initialize the mX instance variable to 10.
+//
+//
+
+//    6.8 Continuing, within main(), are the following statements legal, i.e., do they compile? If so, explain
+//          what happens when the statement is executed. If not, explain why the statement is illegal.
+//             (a) int a1 = C.mX;
+//             (b) int a2 = C.mY;
+//             (c) int a3 = C.A;
+//             (d) int a4 = C.B;
+//             (e) cObj1.C(20);
+//             (f ) int a5 = cObj1.getX(); (g) cObj1.setX(20);
+//             (h) cObj2.setX(cObj1.getX()); (i) int a6 = C.getX();
+//             (j) C.setX(20);
+//             (k) int a7 = cObj1.getY();
+//             (l) cObj1.setY(20); (m) int a8 = C.getY(); (n) C.setY(20);
 
 }
