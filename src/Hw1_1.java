@@ -1,9 +1,16 @@
+import java.io.*;
+import java.util.Scanner;
+
+import static java.lang.System.out;
+
 public class Hw1_1 {
 // 4.1Explain what happens if you try to open a file for reading that does not exist.
+// A FileNotFoundException is thrown "Exception in thread "main" java.io.FileNotFoundException: Hw1_1 (No such file or directory)"
 
 // 4.2Explain what happens if you try to open a file for writing that does not exist.
+// A new file with the name indicated is created.
 
-// 4.3Name your source code file Hw1_1.java. Write a program that prompts the user for the name of a Java source code file.
+// 4.3 Name your source code file Hw1_1.java. Write a program that prompts the user for the name of a Java source code file.
 // The program shall read the source code file and output the contents to a new file named the same as the input file,
 // but with a .txt file name extension (e.g., if the input file is foo.java then the output file shall be named foo.java.txt).
 // Each line of the input file shall be numbered with a line number (formatted as shown below) in the output file.
@@ -29,9 +36,26 @@ public class Hw1_1 {
 //            [009] }
 //    Hint: to print an integer as shown above in a field of width 3 with leading 0's use the printf() method with a format specifier of %03d.
 
-//    public static void main(String[] pArgs) {
-//        }
-//        public Hw1_1() {
-//        }
+    public static void main(String[] pArgs) throws IOException {
+        Hw1_1();
+    }
+
+    public static void Hw1_1() throws IOException {
+        FileOutputStream outFile = null;
+        Scanner user_input = new Scanner(System.in);
+
+        System.out.print("Enter the name of a java source file : ");
+        String fileName = user_input.next();
+
+        FileInputStream inFile = new FileInputStream(fileName);
+        outFile = new FileOutputStream(fileName + ".txt");
+
+        int i;
+        while ((i = inFile.read()) != -1) {
+            outFile.write(i);
+        }
+
+
+    }
 
 }
