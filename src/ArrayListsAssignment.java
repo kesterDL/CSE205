@@ -60,12 +60,27 @@ public class ArrayListsAssignment {
      * 3.4 Write a method named arrayListSum() that has one parameter pList which is an object of the
      * class ArrayList <Integer>. The method shall return the sum of the elements of pList.
      */
+    public Integer arrayListSum( ArrayList<Integer> pList) {
+        Integer sum = 0;
+        for (Integer num:pList) {
+            sum += num;
+        }
+        return sum;
+    }
 
     /**
      * 3.5 Write a method named named arrayListCreate() that has two int parameters pLen and pInitValue.
      *  The method shall create and return a new ArrayList<Integer> object which has exactly pLen elements.
      * Each element shall be initialized to pInitValue.
      */
+    public ArrayList<Integer> arrayListCreate(int pLen, int pInitValue) {
+        ArrayList<Integer> initializedList = new ArrayList<>();
+
+        for (int i = 0; i < pLen ; i++) {
+            initializedList.add(pInitValue);
+        }
+        return initializedList;
+    }
 
     /**
      * 3.6 Write a void method named insertName() that has two input parameters: (1) pList which is an object
@@ -73,13 +88,72 @@ public class ArrayListsAssignment {
      * Assume the names in pList are sorted into ascending order. The method shall insert pName into
      * pList such that the sort order is maintained.
      */
+    public void insertName(ArrayList<String> pList, String pName){
+        ArrayList<String> splitList = new ArrayList<>();
+        char pNameLetter = pName.toLowerCase().charAt(0);
+        int namePosition = 0;
+        int letterPosition = 0;
+        boolean foundPosition = false;
 
+        // iterates through the list of names comparing the first letter of each name to the first letter of pName
+        // This really should be done in it's own method, but given the assignment I will write this limited version here.
+        while(!foundPosition) {
+            System.out.println("Comparing " + pNameLetter + " to " + pList.get(namePosition).toLowerCase().charAt(letterPosition));
+            switch(letterPosition) {
+                case 0: // checks if first letters are greater, less than, or equal.
+                    if (pNameLetter > pList.get(namePosition).toLowerCase().charAt(0)) {
+                        namePosition++;
+                    } else if ((pNameLetter < pList.get(namePosition).toLowerCase().charAt(0))) {
+                        pList.add(namePosition, pName);
+                        foundPosition = true;
+                    } else if ((pNameLetter == pList.get(namePosition).toLowerCase().charAt(0))) {
+                        letterPosition++;
+                        pNameLetter = pName.toLowerCase().charAt(letterPosition);
+                    }
+                    break;
+                case 1:
+                    if (pNameLetter > pList.get(namePosition).toLowerCase().charAt(1)) {
+                        namePosition++;
+                    } else if ((pNameLetter < pList.get(namePosition).toLowerCase().charAt(1))) {
+                        pList.add(namePosition, pName);
+                        foundPosition = true;
+                    } else if ((pNameLetter == pList.get(namePosition).toLowerCase().charAt(1))) {
+                        letterPosition++;
+                        pNameLetter = pName.toLowerCase().charAt(letterPosition);
+                    }
+                    break;
+                case 2:
+                    if (pNameLetter > pList.get(namePosition).toLowerCase().charAt(2)) {
+                        namePosition++;
+                    } else if ((pNameLetter < pList.get(namePosition).toLowerCase().charAt(2))) {
+                        pList.add(namePosition, pName);
+                        foundPosition = true;
+                    } else if ((pNameLetter == pList.get(namePosition).toLowerCase().charAt(2))) {
+                        letterPosition++;
+                        pNameLetter = pName.toLowerCase().charAt(letterPosition);
+                    }
+                    break;
+
+                    default:
+                        foundPosition = true;
+                        break;
+            }
+
+        }
+
+    }
     /**
      * 3.7 Write a void method named arrayListRemove() which has two parameters: pList is an object of the
      * ArrayList <Integer> class and pValue is an int. The method shall remove all elements from pList
      * that are equal to pValue.
      */
-
+    public void arrayListRemove(ArrayList<Integer> pList, int pValue) {
+        for (Integer num: pList) {
+            if(num == pValue){
+                pList.remove(pList.indexOf(num));
+            }
+        }
+    }
 
 
 }
