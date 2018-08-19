@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
-public class ArrayListsTest {
+public class HW1Tests {
 
     ArrayListsAssignment1 subject = new ArrayListsAssignment1();
     ArrayList<Integer> controlInt = new ArrayList<>(Arrays.asList(0, -1, 2, 3, -4, 0, 1, 2, 3, 4));
