@@ -82,6 +82,35 @@ public class Hw1_1 {
 //        An instance method would be called Math m = new Math(); then m.pow(a,b);
 //
 
+//  6.4 Explain what happens when this application runs and why.
+//    public class C {
+//        private int x;
+//        private String s;
+//        public static void main(String[] pArgs) {
+//            new C(); }
+//        public C() {
+//            x = s.length();
+//            System.out.println("x = " + x);
+//        }
+//    }
+//
+//    NullPointerException is thrown. s was not initiallized at any point in the code, and the exception is never handled.
+
+//  6.6 Continuing with the previous exercise, write the declaration for a class named Main that implements the
+//  main() method. Within main() suppose we wish to instantiate a C object named cObj1 calling the default constructor.
+//  Write the code to do this.
+//
+//
+// 6.5 Write the declaration for a class named C that declares:
+//  (1) a private int instance variable named mX;
+//  (2) a private int class variable named mY initialized to 0;
+//  (3) a private int class constant named A which is equivalent to 100;
+//  (4) a public int class constant named B which is equivalent to 200;
+//  (5) public accessor and mutator methods for mX named getX() and setX();
+//  (6) public accessor and mutator methods for mY named getY() and setY();
+//  (7) a constructor that has one int input parameter named pX which calls setX() to initialize mX to pX;
+//  (8) a default constructor that calls C(int) to initialize mX to -1.
+
 //    6.7 Continuing, write the code to instantiate another C object named cObj2 calling the second constructor to
 //          initialize the mX instance variable to 10.
 //
